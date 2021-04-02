@@ -10,17 +10,22 @@ import {
   Platform,
 } from 'react-native';
 import {Focus} from './src/features/focus/Focus';
-import {colors, darkBlue} from './src/utils/colors';
+import {colors} from './src/utils/colors';
 import {Timer} from './src/features/timer/Timer';
 import {spacing} from './src/utils/sizes';
 
 const App = () => {
-  const [focusSubject, setFocusSubject] = useState('gardening');
+  const [focusSubject, setFocusSubject] = useState(null);
   return (
     <>
       <View style={styles.container}>
         {focusSubject ? (
-          <Timer focusSubject={focusSubject} />
+          <Timer
+            focusSubject={focusSubject}
+            onTimerEnd={() => {
+              setFocusSubject(null);
+            }}
+          />
         ) : (
           <Focus addSubject={setFocusSubject} />
         )}

@@ -12,6 +12,8 @@ target 'FocusTime' do
     :hermes_enabled => false
   )
 
+  pod 'react-native-keep-awake', :path => '../node_modules/react-native-keep-awake'
+
   target 'FocusTimeTests' do
     inherit! :complete
     # Pods for testing
