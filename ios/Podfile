@@ -14,6 +14,8 @@ target 'FocusTime' do
 
   pod 'react-native-keep-awake', :path => '../node_modules/react-native-keep-awake'
 
+  pod 'RNCAsyncStorage', :path => '../node_modules/@react-native-async-storage/async-storage'
+
   target 'FocusTimeTests' do
     inherit! :complete
     # Pods for testing

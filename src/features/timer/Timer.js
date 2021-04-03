@@ -10,7 +10,7 @@ import KeepAwake from 'react-native-keep-awake';
 
 const DEFAULT_TIME = 0.1;
 
-export const Timer = ({focusSubject, onTimerEnd}) => {
+export const Timer = ({focusSubject, onTimerEnd, clearSubject}) => {
   <KeepAwake />;
   const [isStarted, setIsStarted] = useState(false);
   const [progresss, setProgrress] = useState(1);
@@ -77,6 +77,9 @@ export const Timer = ({focusSubject, onTimerEnd}) => {
           <RoundedButton title="start" onPress={() => setIsStarted(true)} />
         )}
       </View>
+      <View style={styles.clearSubject}>
+        <RoundedButton title="X" size={50} onPress={() => clearSubject()} />
+      </View>
     </View>
   );
 };
@@ -106,5 +109,9 @@ const styles = StyleSheet.create({
     padding: 30,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  clearSubject: {
+    paddingBottom: 25,
+    paddingLeft: 25,
   },
 });
